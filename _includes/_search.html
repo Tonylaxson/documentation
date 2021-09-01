@@ -97,6 +97,11 @@
     if(searchTimeout) {
       clearTimeout(searchTimeout);
     }
+
+      // push event to GTM datalayer
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+
       searchTimeout = setTimeout(() => {
         gtag('event', 'search', {
           'event_category': 'docs-engagement', 
